@@ -11,6 +11,10 @@ public class Box {
         this.depth = depth;
     }
 
+    public Box getBoxOffset(double width, double height, double depth) {
+        return new Box(this.width - width, this.height - height, this.depth - depth);
+    }
+
     public boolean isEqual(Box box) {
         return this.width == box.width && this.height == box.height && this.depth == box.depth;
     }
