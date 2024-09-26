@@ -15,6 +15,10 @@ public class Box {
         return "[ width: " + width + ", height: " + height + ", depth: " + depth + " ]";
     }
 
+    public double getBoxVolume() {
+        return width * height * depth;
+    }
+
     public double getWidth() {
         return width;
     }
