@@ -12,7 +12,7 @@ public class Box {
     }
 
     public Box getBoxOffset(double width, double height, double depth) {
-        return new Box(this.width - width, this.height - height, this.depth - depth);
+        return new Box(this.width + width, this.height + height, this.depth + depth);
     }
 
     public boolean isEqual(Box box) {
