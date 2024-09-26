@@ -11,6 +11,10 @@ public class Box {
         this.depth = depth;
     }
 
+    public boolean isEqual(Box box) {
+        return this.width == box.width && this.height == box.height && this.depth == box.depth;
+    }
+
     public String getBoxDimension() {
         return "[ width: " + width + ", height: " + height + ", depth: " + depth + " ]";
     }
