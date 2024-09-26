@@ -11,6 +11,10 @@ public class Box {
         this.depth = depth;
     }
 
+    public String getBoxDimension() {
+        return "[ width: " + width + ", height: " + height + ", depth: " + depth + " ]";
+    }
+
     public double getWidth() {
         return width;
     }
