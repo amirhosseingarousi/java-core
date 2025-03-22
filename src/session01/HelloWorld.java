@@ -1,3 +1,5 @@
+package session01;
+
 import java.util.Scanner;
 
 class HelloWorld {
