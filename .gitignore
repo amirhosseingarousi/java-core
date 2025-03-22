@@ -3,4 +3,3 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 core-java.iml
-.idea
