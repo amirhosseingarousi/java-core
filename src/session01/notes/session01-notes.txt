@@ -1,0 +1,119 @@
+
+session 01
+
+why java?
+	1. platform independent (write once run anywhere!)
+	2. simple & robust
+	3. secure
+	4. Automatic memory management	-- GC: free the memory
+	5. Multi thread support
+	6. Object-Oriented support		-- Encapsulation, Inheritance, Polymorphism, Abstraction
+	7. I/O support
+	8. Networking support -- TCP/UDP programming
+	9. Functional programming support
+	
+	
+	
+	First.java -> javac First.java -> First.class (intermediate byte code)
+		
+		First.class : platform independent
+		JVM: platform specific
+		
+	Environment:
+		* compile-time
+		* run-time  
+				=> platform independent
+				
+	Q: can you write & compile a java code without main method? Yes
+		+ can you run it? No
+		
+	Q: How JVM call main method? First.main()
+	
+	Method
+		* Declaration: e.x public static int parseInt(String s) throws NumberFormatException
+		* Definition
+		
+	JDK:
+		* Development tools: javac, java, debugger, ...
+		
+		* JRE: 
+			* java API libraries: packages	
+			* JVM: load & execute
+					jvm is smart enough to load only classes which are required.
+					e.x import java.util.*;
+
+	Q: what is Scanner?
+	    a class that represent text based parser.
+	    it can  only parse text data from any source: console, text file, socket, string, ...
+	    import java.util.Scanner;
+	    default delimiter: space    e.x. 2.3 3.14
+	    parsing: converting string to suitable data type.
+
+	Methods:
+	    * Blocking          -- scanner.nextInt()
+	    * Non-Blocking
+
+Data Types
+    * primitive data Type: hold value
+        - boolean
+        - numeric
+            - integral
+                + character: char
+                + integer: byte, short, int, long
+            - floating: float, double
+
+    * Reference data Type: hold address
+                           - hold the address of obj which created dynamically(run-time) in heap
+        * class type
+        * interface type
+        * array type
+
+
+Naming Conventions
+    * class, interface, enum: 1st letter of 1st word must start with uppercase
+        & then follow camel case notation. e.x HelloWorld
+
+    * data members/methods: 1st must start with lower case
+                            & then follow camel case notation. e.x sayHello(), calculateSalary()
+
+    * constant: all uppercase. e.x PI
+
+    * Identifiers: must start with letter or $ or underscore(_).
+                    cannot start with number.
+                    cant use java keyword as identifier.
+                    are case-sensitive.
+
+Access Specifiers
+    * private
+    * default (package private) -- no access modifier
+    * protected
+    * public
+
+    Legal class level access specifier
+        * default: scope = current package only
+        * public: scope = access from anywhere
+            public class name & file name must have to match
+            multiple default class in same file are allowed
+            multiple public class in same file are NOT allowed.
+                    because public class name must match file name.
+
+
+Conversion regarding primitive types
+    * Automatic conversion(widening) -- Automatic promotions:
+            byte --> short --> int --> long --> float --> double
+            char --> int
+
+            long --> float is considered automatic type of conversion
+            -- compiler goes by(matter) type
+
+            Rules:
+                1. source & dest must be compatible, dest data type must be able to store larger magnitude of values than source.
+                2. any arithmetic operation involve byte & short -> automatic promoted to int.
+                3. int & long --> long
+                4. long & float --> float
+                5. byte, short, int, long & float & double --> double
+
+            Narrowing Conversion: forced conversion (type casting)
+                e.x double --> int
+                    float --> long
+                    double --> float

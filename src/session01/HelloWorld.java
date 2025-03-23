@@ -5,11 +5,6 @@ import java.util.Scanner;
 class HelloWorld {
 
     public static void main(String[] args) {
-        System.out.println("Welcome to Java 21.");
-        System.out.println("sum = " + sum(args));
-        System.out.println(args[0] + args[1]);
-
-        System.out.printf("Result = %.3f", multiply());
 
     }
 
