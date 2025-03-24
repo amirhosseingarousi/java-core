@@ -1,0 +1,65 @@
+
+Data types
+    1. primitive type: hold value
+    2. reference type: address of object which create at heap
+
+    primitive type
+        * boolean
+        * numeric
+            * integral: char(2 bytes), byte, short, int, long
+            * floating: float(4 bytes), double(8 bytes)
+
+    Conversions
+        * widening (auto conversion/promotion)
+            perform by compiler (javac)
+        * narrowing: performed by programmer -- type casting
+
+
+JRE
+    1. libraries: .jar
+    2. jvm: process run on top of operating system.
+            OS give some memory to jvm
+            memory area: manage by jvm
+            * class loader: load required classes to jvm memory
+            * method area (meta space): store class information
+                one single copy per jvm
+                e.x load java.util.Scanner into method area.
+                    static data member
+                    methods (object behavior)
+                    entire byte code load in method area
+            * heap
+                one single copy per jvm.
+                only state of object (non-static data member)
+                methods ? -> load in method area.
+
+            * stack
+                one per thread
+                store method local info (args, variables, return value)
+            * PC register
+                store address of instruction
+            * native method stack
+
+
+    jvm create 2 system threads: main, GC
+        & create 2 separate stack for 2 threads
+        main thread: invoke main method. -- public static void main(String[] args)
+====================================================================================
+
+Class & Object
+
+class: user defined blueprint or prototype or template. -> from which objects are created.
+        * represent set of properties(data) & methods(action) are common to all object of one type
+
+    class declaration include:
+        1. Access specifier: a class can be public or has default access.
+        2. super class: if any, precede by keyword extends.
+                implicit super class of all java classes java.lang.Object
+        3. interfaces: if any, precede by keyword implements.
+        4. constructor: initializing the state of new objects.
+        5. fields: variables that provide the state of the class & its objects.
+        6. methods: implement the behavior of the class & its objects.
+
+    An object consist of:
+        1. state: instance variables (non-static)
+        2. behavior: action upon data
+        3. identity: enable one obj to interact with other objects.
