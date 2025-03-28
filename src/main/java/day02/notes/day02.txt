@@ -89,3 +89,17 @@ class: user defined blueprint or prototype or template. -> from which objects ar
 
          * the default constructor implicitly call the super class no-arg constructor.
          * if you add parameterized constructor the default constructor implicitly no longer available.
+
+
+    Encapsulation: putting data & action together
+        * outside of class can not access directly to state
+            achieve by making all instance var (non-static data member) private.
+            access state only within the class
+
+    Instance method: non-static method
+                     available only with object reference
+
+    this keyword:
+        1. to un-hide instance var from local var. -- this.width = width;
+        2. to invoke constructor of the same class from different constructor.
+              e.x this(width, height);

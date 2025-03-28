@@ -3,6 +3,9 @@ package day02;
 public class ApplicationDay02 {
     public static void main(String[] args) {
 
+        Box box = new Box(5, 3, 2);
+        System.out.println(box.getBoxDetails());
+        System.out.println(box.getBoxVolume());
     }
 
     private static void m() {
