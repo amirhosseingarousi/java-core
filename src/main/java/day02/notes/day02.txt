@@ -4,16 +4,21 @@ Data types
     2. reference type: address of object which create at heap
 
     primitive type
-        * boolean
+        * boolean: size -> jvm specification
         * numeric
             * integral: char(2 bytes), byte, short, int, long
             * floating: float(4 bytes), double(8 bytes)
 
-    Conversions
+    Conversions in primitive type
         * widening (auto conversion/promotion)
             perform by compiler (javac)
         * narrowing: performed by programmer -- type casting
 
+==== jvm arch  ====
+
+JDK (java SE)
+    * development tools: javac & java run-time
+    * jre
 
 JRE
     1. libraries: .jar
@@ -26,18 +31,21 @@ JRE
                 e.x load java.util.Scanner into method area.
                     static data member
                     methods (object behavior)
-                    entire byte code load in method area
             * heap
                 one single copy per jvm.
                 only state of object (non-static data member)
-                methods ? -> load in method area.
+                methods (behavior) ? -> load in method area.
 
             * stack
                 one per thread
                 store method local info (args, variables, return value)
+
             * PC register
+                one per thread
                 store address of instruction
+
             * native method stack
+                method written in platform specific manner
 
 
     jvm create 2 system threads: main, GC
@@ -48,13 +56,14 @@ JRE
 Class & Object
 
 class: user defined blueprint or prototype or template. -> from which objects are created.
-        * represent set of properties(data) & methods(action) are common to all object of one type
+        * represent set of properties(data) & methods(action) that are common to all object of one type
 
     class declaration include:
         1. Access specifier: a class can be public or has default access.
         2. super class: if any, precede by keyword extends.
                 implicit super class of all java classes java.lang.Object
         3. interfaces: if any, precede by keyword implements.
+                        a class can implement more than one interface.
         4. constructor: initializing the state of new objects.
         5. fields: variables that provide the state of the class & its objects.
         6. methods: implement the behavior of the class & its objects.
@@ -62,4 +71,21 @@ class: user defined blueprint or prototype or template. -> from which objects ar
     An object consist of:
         1. state: instance variables (non-static)
         2. behavior: action upon data
-        3. identity: enable one obj to interact with other objects.
+        3. identity: unique identity & enable one obj to interact with other objects.
+
+    Creating an object:
+        the new operator instantiates a class by allocating memory for a new object & returning
+        a reference to that memory. the new operator also invoke the class constructor.
+
+
+    === Constructor  ====
+    constructor: is a special method having same name as the class name,
+                    no explicit return type,
+                    may be parameterized or parameter less.
+
+         parameterized constructor: is used to initialize state of object
+         * if a class does not explicitly declare any constructor, the java compiler automaticaly provide
+                no-argument constructor -> default constructor
+
+         * the default constructor implicitly call the super class no-arg constructor.
+         * if you add parameterized constructor the default constructor implicitly no longer available.
