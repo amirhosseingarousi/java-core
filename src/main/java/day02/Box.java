@@ -18,6 +18,14 @@ public class Box {
         return "Box Dimension: [ width: " + width + ", Height: " + height + ", Depth: " + depth + " ]";
     }
 
+    public String getBoxInfo() {
+        StringBuilder sb = new StringBuilder();
+        return sb.append("width = ").append(width)
+                .append(", Height = ").append(height)
+                .append(", Depth = ").append(depth)
+                .toString();
+    }
+
     public double getBoxVolume() {
         return width * height * depth;
     }

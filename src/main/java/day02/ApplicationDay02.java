@@ -3,9 +3,20 @@ package day02;
 public class ApplicationDay02 {
     public static void main(String[] args) {
 
+        Box box = CreateBox.getBoxFromUser();
+//        System.out.println(box.getBoxDetails());
+//        System.out.println("Volume: " + box.getBoxVolume());
+
+        Box box1 = box;
+        System.out.println("box volume: " + box.getBoxVolume());
+        System.out.println("box1 volume: " + box1.getBoxVolume());
+    }
+
+    private static void m2() {
         Box box = new Box(5, 3, 2);
         System.out.println(box.getBoxDetails());
         System.out.println(box.getBoxVolume());
+        System.out.println(box.getBoxInfo());
     }
 
     private static void m() {

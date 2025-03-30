@@ -103,3 +103,38 @@ class: user defined blueprint or prototype or template. -> from which objects ar
         1. to un-hide instance var from local var. -- this.width = width;
         2. to invoke constructor of the same class from different constructor.
               e.x this(width, height);
+
+    e.x
+    class Main {
+        public static void main(String[] args) {
+            Box box; // reference type of variable. -- no obj created so far
+                        method local var. -- memory allocated in stack
+
+            System.out.println(box); // javac err
+                                   method local var by default are un-initialize
+
+            box = new Box(); // Box class load on method area & it's instance created in Heap.
+                          new operator return the reference of the obj created in heap.
+                          RHS: object, LHS: reference of the obj(class type of reference)
+
+            Q: instance var vs. local var ?
+
+            Q: can one obj have multiple references? Yes
+           * Q: can one ref points to multiple objects? No
+
+           note: method local variable allocated in stack, whether it is primitive or reference type.
+        }
+    }
+
+    ====== Garbage Collection  =======
+
+        * is a process to identify and delete objects from Heap memory which are not in use.
+                GC frees space after removing un-reference objects.
+
+                Garbage = un-referencable object
+                GC is a time-consuming process
+                JVM activate GC only if required (if Heap is under pressure)
+
+    System.gc();  // a request to JVM for running GC thread
+
+    Q: which is the method called by GC before free the memory of Heap? finalize()
