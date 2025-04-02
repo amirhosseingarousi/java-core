@@ -1,7 +1,7 @@
 
 Data types
-    1. primitive type: hold value
-    2. reference type: address of object which create at heap
+    1. Primitive type: hold value
+    2. Reference type: address of object which create at heap
 
     primitive type
         * boolean: size -> jvm specification
@@ -22,8 +22,8 @@ JDK (java SE)
 
 JRE
     1. libraries: .jar
-    2. jvm: process run on top of operating system.
-            OS give some memory to jvm
+    2. jvm: process run on top of an operating system.
+            OS gives some memory to jvm
             memory area: manage by jvm
             * class loader: load required classes to jvm memory
             * method area (meta space): store class information
@@ -103,6 +103,7 @@ class: user defined blueprint or prototype or template. -> from which objects ar
         1. to un-hide instance var from local var. -- this.width = width;
         2. to invoke constructor of the same class from different constructor.
               e.x this(width, height);
+        3. refers to current object reference
 
     e.x
     class Main {
@@ -122,7 +123,7 @@ class: user defined blueprint or prototype or template. -> from which objects ar
             Q: can one obj have multiple references? Yes
            * Q: can one ref points to multiple objects? No
 
-           note: method local variable allocated in stack, whether it is primitive or reference type.
+           note: method local variable allocated in stack, whether it is a primitive or reference type.
         }
     }
 
@@ -138,3 +139,9 @@ class: user defined blueprint or prototype or template. -> from which objects ar
     System.gc();  // a request to JVM for running GC thread
 
     Q: which is the method called by GC before free the memory of Heap? finalize()
+
+
+DRY principle: Do Not Repeat Yourself
+                e.x constructor chaining :)
+
+    & vs. && ?
